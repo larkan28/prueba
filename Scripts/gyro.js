@@ -1,8 +1,8 @@
-function handleOrientation(e)
+function handleMotion(e)
 {
-    let a = e.alpha;
-    let b = e.beta;
-    let g = e.gamma;
+    let a = e.rotationRate.alpha;
+    let b = e.rotationRate.beta;
+    let g = e.rotationRate.gamma;
 
     document.getElementById('alpha').innerText = a;
     document.getElementById('beta').innerText = b;
@@ -16,20 +16,20 @@ function handleOrientation(e)
 
 async function requestOrientation()
 {
-    if (typeof DeviceOrientationEvent != 'undefined' && typeof DeviceOrientationEvent.requestPermission === 'function') {
+    if (typeof DeviceMotionEvent != 'undefined' && typeof DeviceMotionEvent.requestPermission === 'function') {
         try {
-            const state = await DeviceOrientationEvent.requestPermission()
+            const state = await DeviceMotionEvent.requestPermission()
 
             if (state === 'granted') {
-                window.addEventListener('deviceorientation', handleOrientation)
+                window.addEventListener('devicemotion', handleMotion)
             }
         }
         catch (error) {
             console.log(error);
         }
     }
-    else if ('DeviceOrientationEvent' in window) {
-        window.addEventListener('deviceorientation', handleOrientation)
+    else if ('DeviceMotionEvent' in window) {
+        window.addEventListener('devicemotion', handleMotion)
     }
     else {
         alert('not supported')
