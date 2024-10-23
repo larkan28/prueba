@@ -1,8 +1,3 @@
-function sayHello()
-{
-    alert('hellooooo')
-}
-
 function handleOrientation(e)
 {
     let a = e.alpha;
@@ -12,7 +7,11 @@ function handleOrientation(e)
     document.getElementById('alpha').innerText = a;
     document.getElementById('beta').innerText = b;
     document.getElementById('gamma').innerText = g;
-    console.log("a: " + a + ",b:" + b + ",g:" + g);
+
+    var unityInstance = window.unityInstance;
+    if (unityInstance) {
+        unityInstance.SendMessage('PlayerPC', 'RecibirDatosGiroscopio', a + ',' + b + ',' + g);
+    }
 }
 
 async function requestOrientation()
