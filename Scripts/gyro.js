@@ -14,7 +14,12 @@ function handleMotion(e)
 
     var unityInstance = window.unityInstance;
     if (unityInstance) {
-        unityInstance.SendMessage('PlayerPC', 'RecibirDatosGiroscopio', a + ',' + b + ',' + g);
+        if(window.innerHeight > window.innerWidth) {
+            unityInstance.SendMessage('PlayerPC', 'RecibirDatosGiroscopio', b + ',' + a + ',' + g);
+        }
+        else {
+            unityInstance.SendMessage('PlayerPC', 'RecibirDatosGiroscopio', a + ',' + b + ',' + g);
+        }
     }
 }
 
