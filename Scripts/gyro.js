@@ -1,12 +1,12 @@
-const threshold = 1;
+const threshold = 10;
 
 function handleMotion(e)
 {
     var rate = e.rotationRate;
 
-    let a = Math.abs(rate.alpha) > threshold ? rate.alpha : 0;
-    let b = Math.abs(rate.beta) > threshold ? rate.beta : 0;
-    let g = Math.abs(rate.gamma) > threshold ? rate.gamma : 0;
+    let a = Math.abs(rate.alpha) > threshold ? (rate.alpha / 10) : 0;
+    let b = Math.abs(rate.beta) > threshold ? (rate.beta / 10) : 0;
+    let g = Math.abs(rate.gamma) > threshold ? (rate.gamma / 10) : 0;
 
     document.getElementById('alpha').innerText = a;
     document.getElementById('beta').innerText = b;
