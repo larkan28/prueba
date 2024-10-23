@@ -4,9 +4,9 @@ function handleOrientation(e)
     let b = e.beta;
     let g = e.gamma;
 
-    document.getElementById('alpha').innerText = a;
-    document.getElementById('beta').innerText = b;
-    document.getElementById('gamma').innerText = g;
+    // document.getElementById('alpha').innerText = a;
+    // document.getElementById('beta').innerText = b;
+    // document.getElementById('gamma').innerText = g;
 
     var unityInstance = window.unityInstance;
     if (unityInstance) {
