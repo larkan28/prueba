@@ -15,7 +15,7 @@ function handleMotion(e)
     var unityInstance = window.unityInstance;
     if (unityInstance) {
         if (window.matchMedia("(orientation: landscape)").matches) {
-            unityInstance.SendMessage('PlayerPC', 'RecibirDatosGiroscopio', -b + ',' + a + ',' + g);
+            unityInstance.SendMessage('PlayerPC', 'RecibirDatosGiroscopio', b + ',' + a + ',' + g);
         }
         else {
             unityInstance.SendMessage('PlayerPC', 'RecibirDatosGiroscopio', a + ',' + -b + ',' + g);
