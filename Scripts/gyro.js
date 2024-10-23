@@ -1,4 +1,4 @@
-const threshold = 20;
+const threshold = 10;
 
 function handleMotion(e)
 {
