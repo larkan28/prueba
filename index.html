@@ -6,8 +6,15 @@
     <title>Unity WebGL Player | 3d-perception</title>
     <link rel="shortcut icon" href="TemplateData/favicon.ico">
     <link rel="stylesheet" href="TemplateData/style.css">
+    <script src="Scripts/gyro.js"></script>
   </head>
   <body>
+    <button onclick="sayHello()">Hola</button><br>
+    <button onclick="requestOrientation()">Permiso</button><br>
+    a: <div id="alpha"></div><br>
+    b: <div id="beta"></div><br>
+    g: <div id="gamma"></div><br>
+    
     <div id="unity-container" class="unity-desktop">
       <canvas id="unity-canvas" width=960 height=600 tabindex="-1"></canvas>
       <div id="unity-loading-bar">
