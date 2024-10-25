@@ -21,14 +21,14 @@ function handleMotion(e)
 
 async function requestOrientation()
 {
-    console.log("requesting orientation");
+    alert("requesting orientation");
 
     if (typeof DeviceMotionEvent != 'undefined' && typeof DeviceMotionEvent.requestPermission === 'function') {
         try {
             const state = await DeviceMotionEvent.requestPermission()
 
             if (state === 'granted') {
-                console.log("permission granted");
+                alert("permission granted");
                 window.addEventListener('devicemotion', handleMotion)
             }
         }
@@ -37,7 +37,7 @@ async function requestOrientation()
         }
     }
     else if ('DeviceMotionEvent' in window) {
-        console.log("permission granted");
+        alert("permission granted");
         window.addEventListener('devicemotion', handleMotion)
     }
     else {
