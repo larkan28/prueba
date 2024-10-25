@@ -8,10 +8,6 @@ function handleMotion(e)
     let b = Math.abs(rate.beta) > threshold ? (rate.beta / threshold) : 0;
     let g = Math.abs(rate.gamma) > threshold ? (rate.gamma / threshold) : 0;
 
-    // document.getElementById('alpha').innerText = a;
-    // document.getElementById('beta').innerText = b;
-    // document.getElementById('gamma').innerText = g;
-
     var unityInstance = window.unityInstance;
     if (unityInstance) {
         if (window.matchMedia("(orientation: landscape)").matches) {
